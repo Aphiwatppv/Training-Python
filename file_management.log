@@ -3,3 +3,12 @@
 2024-02-18 02:48:11,700:INFO:User exited the program
 2024-02-18 03:05:44,935:INFO:File copied from E:\Training Python\Folder1\Test5.txt to E:\Training Python\Folder1\Test6.txt
 2024-02-18 03:07:36,308:INFO:User exited the program
+2024-02-18 12:58:30,486:ERROR:Error creating file: write() argument must be str, not list
+2024-02-18 13:02:16,316:ERROR:Error creating file: write() argument must be str, not list
+2024-02-18 13:04:38,358:ERROR:Error creating file: iterable expected, not int
+2024-02-18 13:11:05,723:INFO:File created: MyFirstcsv.csv
+2024-02-18 13:14:09,745:INFO:User exited the create file feature
+2024-02-18 13:15:39,047:INFO:File created: nameTest.txt
+2024-02-18 13:15:40,757:INFO:User exited the create file feature
+2024-02-18 13:15:44,739:INFO:User exited the create file feature
+2024-02-18 13:15:45,848:INFO:User exited the program
