@@ -1,7 +1,7 @@
 import shutil
 import os
 import logging
-
+import csv
     # Configure logging
 logging.basicConfig(filename='file_management.log', level=logging.INFO, 
                     format='%(asctime)s:%(levelname)s:%(message)s')
@@ -23,6 +23,7 @@ class Method:
         except Exception as e:
             print(f"An error occurred: {e}")
             logging.error(f"Error copying file: {e}")
+
     @staticmethod
     def delete_file(file_path):
         try:
@@ -38,3 +39,24 @@ class Method:
         except Exception as e:
             print(f"An error occurred: {e}")
             logging.error(f"Error deleting file: {e}")
+
+    @staticmethod
+    def create_file(file_path, content=None):
+        try:
+            # Check if the file is a CSV
+            if file_path.endswith('.csv'):
+                with open(file_path, mode='w', newline='', encoding='utf-8') as file:
+                    writer = csv.writer(file)
+                    writer.writerows(content or [])
+            else:  # Assume it's a text file
+                with open(file_path, mode='w', encoding='utf-8') as file:
+                    file.write(content or '')
+            
+            print(f"File {file_path} has been created successfully.")
+            logging.info(f"File created: {file_path}")
+        except PermissionError:
+            print(f"Permission denied: unable to create {file_path}.")
+            logging.error(f"Permission denied for creating file: {file_path}")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            logging.error(f"Error creating file: {e}")
